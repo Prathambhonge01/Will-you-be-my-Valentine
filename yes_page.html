@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knew You Would Say Yes! 💖</title>
+    <meta name="description" content="Valentine proposal accepted! Celebration time!">
+    
+    <link rel="stylesheet" href="./yes_style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>">
+</head>
+<body>
+
+    <!-- Ambient particle canvases -->
+    <canvas id="hearts-canvas"></canvas>
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Top utility buttons -->
+    <div class="top-bar">
+        <button id="music-btn" class="icon-btn" onclick="toggleAudio()" title="Toggle Sweet Music">
+            🎵 <span>Music</span>
+        </button>
+        <a href="index.html" class="icon-btn" title="Back to Start">
+            ↺ <span>Replay</span>
+        </a>
+    </div>
+
+    <!-- Celebration Card -->
+    <main class="container">
+        <div class="badge">🎉 It's Official!</div>
+        <h1 id="celebrate-heading" class="header_text">Knew you would say yes! 💖</h1>
+        <p class="subtitle">Best decision you've ever made! 🥰</p>
+        <div id="from-container" class="from-text" style="display: none;"></div>
+
+        <div class="gif_container">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif" alt="Cute celebrating bears hugging and kissing">
+        </div>
+
+        <!-- Date Planner -->
+        <h2 class="section-title">✨ Pick Our Dream Date ✨</h2>
+        <div class="date-grid">
+            <div class="date-card" onclick="toggleDateCard(this)">
+                <span class="date-icon">🍝</span>
+                <span class="date-name">Romantic Dinner</span>
+                <span class="date-check">✓ Selected! 💕</span>
+            </div>
+            <div class="date-card" onclick="toggleDateCard(this)">
+                <span class="date-icon">🎬</span>
+                <span class="date-name">Movie Marathon</span>
+                <span class="date-check">✓ Selected! 💕</span>
+            </div>
+            <div class="date-card" onclick="toggleDateCard(this)">
+                <span class="date-icon">🍨</span>
+                <span class="date-name">Dessert & Stroll</span>
+                <span class="date-check">✓ Selected! 💕</span>
+            </div>
+            <div class="date-card" onclick="toggleDateCard(this)">
+                <span class="date-icon">🌌</span>
+                <span class="date-name">Stargazing & Picnic</span>
+                <span class="date-check">✓ Selected! 💕</span>
+            </div>
+            <div class="date-card" onclick="toggleDateCard(this)">
+                <span class="date-icon">☕</span>
+                <span class="date-name">Cozy Coffee & Games</span>
+                <span class="date-check">✓ Selected! 💕</span>
+            </div>
+            <div class="date-card" onclick="toggleDateCard(this)">
+                <span class="date-icon">🎡</span>
+                <span class="date-name">Amusement Park</span>
+                <span class="date-check">✓ Selected! 💕</span>
+            </div>
+        </div>
+
+        <!-- Love Letter Section -->
+        <div>
+            <button id="letter-toggle-btn" class="love-letter-btn" onclick="toggleLoveLetter()">
+                💌 Open Love Letter
+            </button>
+            <div id="love-letter" class="love-letter-content">
+                <p id="letter-greeting">Dearest Valentine,</p>
+                <p style="margin: 8px 0;">
+                    Thank you for saying yes! You make everyday brighter, sweeter, and so much more fun.
+                    I can't wait to make countless wonderful memories together! 💕
+                </p>
+                <p id="letter-signature" style="text-align: right; margin-top: 10px;">
+                    Forever yours, <br>With all my love ❤️
+                </p>
+            </div>
+        </div>
+
+        <!-- Valentine Countdown -->
+        <div class="countdown-box">
+            <div class="countdown-title">⏳ Countdown to Valentine's Day:</div>
+            <div class="countdown-grid">
+                <div class="countdown-item">
+                    <span id="count-days" class="countdown-num">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="count-hours" class="countdown-num">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="count-mins" class="countdown-num">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="count-secs" class="countdown-num">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions-bar">
+            <button class="btn-primary" onclick="triggerConfetti(180); audio.playFanfare();">
+                Celebrate Again! 🎉
+            </button>
+            <button id="share-btn" class="btn-secondary" onclick="shareCelebration()">
+                Share the News 💌
+            </button>
+        </div>
+    </main>
+
+    <script src="./yes_script.js"></script>
+</body>
+</html>
